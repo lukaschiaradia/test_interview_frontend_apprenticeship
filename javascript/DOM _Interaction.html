@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="fr">
+<body>
+    <p id="myText">Basic text</p>
+    <button id="changeTextButton">Change Text</button>
+    <script>
+        const button = document.getElementById('changeTextButton');
+        button.addEventListener('click', function() {
+            document.getElementById('myText').textContent = 'Hello, Check!';
+        });
+    </script>
+</body>
+</html>
