@@ -9,24 +9,33 @@ class Greeting extends React.Component {
   }
 }
 
-
-function App() {
+function Counter() {
   const [count, setCount] = useState(0);
 
-  function addClick() {
+  const addClick = () => {
     setCount(count + 1);
-  }
-  function removeClick() {
+  };
+
+  const removeClick = () => {
     setCount(count - 1);
-  }
+  };
+
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button style={{ width: '200px', height: '100px' }} onClick={addClick}>+</button>
+      <button style={{ width: '200px', height: '100px' }} onClick={removeClick}>-</button>
+    </div>
+  );
+}
+
+function App() {
 
   return (
     <div className="App">
       <header className="App-header">
       <Greeting name="John Doe" />
-      <h1>{count}</h1>
-      <button style={{ width: '200px', height: '100px' }} onClick={addClick}>+</button>
-      <button style={{ width: '200px', height: '100px' }} onClick={removeClick}>-</button>
+      <Counter />
       </header>
     </div>
     
