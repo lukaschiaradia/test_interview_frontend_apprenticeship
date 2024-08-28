@@ -5,10 +5,11 @@ import { useState } from 'react';
 
 class Greeting extends React.Component {
   render() {
-    return <div>Hello {this.props.name}!</div>;
+    return <h1>Hello {this.props.name}!</h1>;
   }
 }
 
+// --------------------------------------------------------------
 function Counter() {
   const [count, setCount] = useState(0);
 
@@ -28,7 +29,24 @@ function Counter() {
     </div>
   );
 }
+//--------------------------------------------------------------
 
+function NameList() {
+  const names = ['Alice', 'Bob', 'Charlie', 'David'];
+
+  return (
+    <div>
+      <p>List of Names:</p>
+      <ul>
+        {names.map((name, index) => (
+          <li key={index}>{name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+//--------------------------------------------------------------
 function App() {
 
   return (
@@ -36,6 +54,7 @@ function App() {
       <header className="App-header">
       <Greeting name="John Doe" />
       <Counter />
+      <NameList />
       </header>
     </div>
     
